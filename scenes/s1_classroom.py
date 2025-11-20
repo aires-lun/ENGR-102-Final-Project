@@ -36,3 +36,5 @@ class classroom(Scene):
         # Draw UI text
         text = self.font.render("Classroom", True, (255,255,255))
         screen.blit(text, (20, 20))
+        
+        self.display_counters(screen)

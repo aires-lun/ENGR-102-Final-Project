@@ -5,14 +5,15 @@ SAVE_PATH = "saves/save_data1.json"
 
 # This works like a dictionary in other files
 DEFAULT_DATA = {
+    "buyers": 0,
     "money": 0,
     "candy":{
-        "twizzlers":0,
-        "Skizzles":0,
-        "woozers":0    
+        "twizzlers": 15,
+        "Skizzles": 0,
+        "woozers": 0    
     },
-    "bA_speed":200.0,
-    "bB_speed":200.0,
+    "bA_speed": 200.0,
+    "bB_speed": 200.0,
     "has_costco_membership": False,
     "settings": {
         "fullscreen": False,

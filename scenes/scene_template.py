@@ -17,7 +17,6 @@ class Scene:
         self.duration = duration
         self.default_next_scene = next_scene_key
         self.font = pygame.font.Font(None, 36)
-        
         self.save = load_save()
         
     def save_game(self):
@@ -68,6 +67,27 @@ class Scene:
         """
         screen.fill((0,0,0))   # Clears the screen
 
+    def display_counters(self, screen):
+        WHITE = (255, 255, 255)
+        SCREEN_WIDTH, SCREEN_HEIGHT = screen.get_size()
+        padding = 10
+        line1_surface = self.font.render(f"Buyers: {self.save["buyers"]}", True, WHITE)
+        line1_rect = line1_surface.get_rect()
+        line1_rect.topright = (SCREEN_WIDTH - padding, padding)
+        screen.blit(line1_surface, line1_rect)
+
+        line2_surface = self.font.render(f"Cash: {self.save["money"]}", True, WHITE)
+        line2_rect = line2_surface.get_rect()
+        line2_rect.topright = line1_rect.bottomright
+        line2_rect.top += padding
+        screen.blit(line2_surface, line2_rect)
+
+        line3_surface = self.font.render(f"Candy: {self.save["candy"]}", True, WHITE)
+        line3_rect = line3_surface.get_rect()
+        line3_rect.topright = line2_rect.bottomright
+        line3_rect.top += padding
+        screen.blit(line3_surface, line3_rect)
+    
     def switch_to(self, next_scene_key):
         """This function is used to change what the next scene should be. It is simple enough that it is not overloaded in the individual
         scenes and is defined in the parent class SceneTemplate.

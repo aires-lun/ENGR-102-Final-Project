@@ -14,7 +14,7 @@ class title_screen(Scene):
 
     def render(self, screen):
         super().render(screen)
-        text = self.font.render("Press any key to start", True, (255,255,255))
+        text = self.font.render("Press any key to start. Press ESC to exit game at any time.", True, (255,255,255))
         screen.blit(text, (100,100))
 
 #test again

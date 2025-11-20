@@ -36,11 +36,16 @@ while running:
     # Initialize the time step and retrive events
     dt = clock.tick(60) / 1000.0
     events = pygame.event.get()
+    keys = pygame.key.get_pressed()
 
     # Check for the QUIT event and exit the program
     for event in events:
         if event.type == pygame.QUIT:
             running = False
+    
+    # Use escape key to QUIT
+    if keys[pygame.K_ESCAPE]:
+        running = False
 
     current_scene.process_input(events)
     current_scene.update(dt)
