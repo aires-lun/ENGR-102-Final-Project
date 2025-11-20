@@ -21,7 +21,10 @@ class classroom(Scene):
     def render(self, screen):
         super().render(screen)
         
-        screen.fill((25, 25, 40))
+        # Load background for classroom
+        background_image = pygame.image.load("assets/classroom_temp.png").convert_alpha()
+        background_image = pygame.transform.scale(background_image, (800, 600))
+        screen.blit(background_image, (0, 0))
 
         # Draw player
         pygame.draw.rect(
