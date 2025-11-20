@@ -16,11 +16,7 @@ class title_screen(Scene):
         super().render(screen)
         text = self.font.render("Press any key to start", True, (255,255,255))
         screen.blit(text, (100,100))
-<<<<<<< HEAD
-###frfrrf
-=======
 
 
 #this is another test
 #this is a test to see if github works for dnyanesh
->>>>>>> e1b0ef017526a5a5866fc6ee61c5639cb04c13ff
