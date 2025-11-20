@@ -23,7 +23,7 @@ class classroom(Scene):
         
         # Load background for classroom
         background_image = pygame.image.load("assets/classroom_temp.png").convert_alpha()
-        background_image = pygame.transform.scale(background_image, (800, 600))
+        background_image = pygame.transform.scale(background_image, screen.get_size())
         screen.blit(background_image, (0, 0))
 
         # Draw player

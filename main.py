@@ -26,7 +26,7 @@ SCENES = {
 save = load_save()
 
 pygame.init()
-screen = pygame.display.set_mode((800,600))
+screen = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
 clock = pygame.time.Clock()
 
 current_scene = SCENES["title_screen"]()
