@@ -5,8 +5,8 @@
         "Skizzles": 0,
         "woozers": 0
     },
-    "bA_speed": 50.0,
-    "bB_speed": 50.0,
+    "bA_speed": 100.0,
+    "bB_speed": 100.0,
     "has_costco_membership": false,
     "settings": {
         "fullscreen": false,
