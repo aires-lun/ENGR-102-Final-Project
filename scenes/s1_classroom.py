@@ -7,8 +7,8 @@ class classroom(Scene):
         super().__init__(180, "playground")
         
         # Initial player position (x, y)
-        self.player_pos = pygame.math.Vector2(300, 300)
-        self.player_collision_box = pygame.Rect(self.player_pos.x, self.player_pos.y, 50, 50)
+        self.player_pos = pygame.math.Vector2(600, 400)
+        self.player_collision_box = pygame.Rect(self.player_pos.x, self.player_pos.y, 25, 25)
         self.player_speed = self.save["bA_speed"]
         
         # Initialize collision boxes
@@ -17,9 +17,16 @@ class classroom(Scene):
             pygame.Rect(0, 0, 1280, 196),
             # Bottom wall
             pygame.Rect(0, 577, 1280, 143),
-            # Misc Objects
+            # Misc Objects:
             pygame.Rect(0, 196, 11, 20),
+            pygame.Rect(13, 338, 113, 71),
+            pygame.Rect(315, 338, 61, 71),
+            # Desks
             pygame.Rect(210, 160, 235, 58),
+            pygame.Rect(712, 263, 44, 100),
+            pygame.Rect(873, 263, 44, 100),
+            pygame.Rect(712, 406, 44, 100),
+            pygame.Rect(873, 406, 44, 100),
             
             # Game window boundaries are below
             pygame.Rect(-1, 0, 1, 720),
@@ -49,7 +56,7 @@ class classroom(Scene):
         pygame.draw.rect(
             screen,
             (200, 50, 50),
-            (self.player_pos.x, self.player_pos.y, 50, 50)
+            (self.player_pos.x, self.player_pos.y, 25, 25)
         )
 
         # Draw UI text
