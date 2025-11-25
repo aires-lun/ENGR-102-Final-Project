@@ -17,16 +17,20 @@ class classroom(Scene):
             pygame.Rect(0, 0, 1280, 196),
             # Bottom wall
             pygame.Rect(0, 577, 1280, 143),
+            
             # Misc Objects:
             pygame.Rect(0, 196, 11, 20),
             pygame.Rect(13, 338, 113, 71),
             pygame.Rect(315, 338, 61, 71),
-            # Desks
+            
+            # Small Desks
             pygame.Rect(210, 160, 235, 58),
             pygame.Rect(712, 263, 44, 100),
             pygame.Rect(873, 263, 44, 100),
             pygame.Rect(712, 406, 44, 100),
             pygame.Rect(873, 406, 44, 100),
+            # Large Desk
+            pygame.Rect(1033, 275, 87, 217),
             
             # Game window boundaries are below
             pygame.Rect(-1, 0, 1, 720),
