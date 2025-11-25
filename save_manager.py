@@ -12,8 +12,8 @@ DEFAULT_DATA = {
         "Skizzles": 0,
         "woozers": 0    
     },
-    "bA_speed": 200.0,
-    "bB_speed": 200.0,
+    "bA_speed": 400.0,
+    "bB_speed": 400.0,
     "has_costco_membership": False,
     "settings": {
         "fullscreen": False,

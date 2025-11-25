@@ -3,7 +3,7 @@ from .scene_template import Scene
 
 class intro(Scene):
     def __init__(self):
-        super().__init__(3, "classroom")
+        super().__init__(2, "classroom")
 
     def process_input(self, events):
         super().process_input(events)
