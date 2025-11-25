@@ -12,8 +12,8 @@ class classroom(Scene):
         self.player_speed = self.save["bA_speed"]
         
         # Initialize collision boxes
-        self.collision_boxes = [                                                                                
-            pygame.Rect(211, 160, 233, 54)                                                                                                                                                                                                                                                                                                                                                        )
+        self.collision_boxes = [
+            pygame.Rect(211, 160, 233, 54)
         ]
 
     
