@@ -7,13 +7,25 @@ class classroom(Scene):
         super().__init__(180, "playground")
         
         # Initial player position (x, y)
-        self.player_pos = pygame.math.Vector2(100, 100)
+        self.player_pos = pygame.math.Vector2(300, 300)
         self.player_collision_box = pygame.Rect(self.player_pos.x, self.player_pos.y, 50, 50)
         self.player_speed = self.save["bA_speed"]
         
         # Initialize collision boxes
         self.collision_boxes = [
-            pygame.Rect(211, 160, 233, 54)
+            # Top wall
+            pygame.Rect(0, 0, 1280, 196),
+            # Bottom wall
+            pygame.Rect(0, 577, 1280, 143),
+            # Misc Objects
+            pygame.Rect(0, 196, 11, 20),
+            pygame.Rect(210, 160, 235, 58),
+            
+            # Game window boundaries are below
+            pygame.Rect(-1, 0, 1, 720),
+            pygame.Rect(0, -1, 1280, 1),
+            pygame.Rect(1280, 0, 1, 720),
+            pygame.Rect(0, 720, 1280, 1),
         ]
 
     
@@ -22,15 +34,8 @@ class classroom(Scene):
 
     def update(self, dt):
         super().update(dt)
+        super().move(dt)
 
-        new_rect = self.player_collision_box.copy()
-
-        new_rect.x += self.movement.x * self.player_speed * dt
-        new_rect.y += self.movement.y * self.player_speed * dt
-
-        if not any(new_rect.colliderect(box) for box in self.collision_boxes):
-            self.player_collision_box = new_rect
-            self.player_pos.update(self.player_collision_box.x, self.player_collision_box.y)
 
     def render(self, screen):
         super().render(screen)

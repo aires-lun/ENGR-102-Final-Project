@@ -19,6 +19,12 @@ class Scene:
         self.font = pygame.font.Font(None, 36)
         self.save = load_save()
         
+        # Default data to be changed in other files
+        self.player_pos = None
+        self.player_collision_box = None
+        self.player_speed = None
+        self.collision_boxes = None
+        
     def save_game(self):
         """When called, saves the game data to the file "save.json".
         """
@@ -57,6 +63,23 @@ class Scene:
         # Normalize movement speed
         if self.movement.length_squared() > 0:
             self.movement = self.movement.normalize()
+            
+    def move(self, dt):
+        if self.movement.x != 0:
+            new_rect = self.player_collision_box.copy()
+            new_rect.x += self.movement.x * self.player_speed * dt
+
+            if not any(new_rect.colliderect(box) for box in self.collision_boxes):
+                self.player_collision_box.x = new_rect.x
+
+        if self.movement.y != 0:
+            new_rect = self.player_collision_box.copy()
+            new_rect.y += self.movement.y * self.player_speed * dt
+
+            if not any(new_rect.colliderect(box) for box in self.collision_boxes):
+                self.player_collision_box.y = new_rect.y
+
+        self.player_pos.update(self.player_collision_box.x, self.player_collision_box.y)
             
     def render(self, screen):
         """This function is what draws the whole frame to the screen. It does not handle any game logic, it purely draws the pixels to the
